@@ -1,17 +1,16 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 
 public class Collectible : MonoBehaviour
 {
     public float rotationSpeed = 0.5f; // Speed of rotation
     public GameObject vfxOncollectEffect;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,7 +21,7 @@ public class Collectible : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.Compurtag("Player"))
+        if (other.CompareTag("Player"))
         {
             Instantiate(vfxOncollectEffect, transform.position, transform.rotation);
             Destroy(gameObject);
